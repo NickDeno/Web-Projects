@@ -1,0 +1,8 @@
+.div-service{
+    border: solid;
+    padding-left: 10px;
+    padding-bottom: 15px;
+    width: 300px;
+    border-color: rgb(150,150,150);
+    border-width: 1px;
+}

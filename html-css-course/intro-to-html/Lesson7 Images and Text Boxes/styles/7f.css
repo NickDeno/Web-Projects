@@ -1,0 +1,38 @@
+p{
+    font-family: Arial;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: rgb(95, 95, 95);
+    font-size: 12px;
+}
+.email{
+    margin-bottom: 5px;
+}
+
+.emailBox{
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 10px;
+    width: 275px;
+    height: 20px;
+}
+
+.description{
+    margin-bottom: 15px;
+}
+
+.joinBtn{
+    background-color: rgb(0, 80, 185);
+    color: white;
+    border: none;
+    padding: 10px 100px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: box-shadow .5s;
+}
+
+.joinBtn:hover{
+    box-shadow: 0px 0px 10px rgba(0,0,0,1);
+}

@@ -1,0 +1,53 @@
+.uberBtn{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    transition: opacity .5s;
+}
+
+.uberBtn:hover{
+    opacity: .6;
+}
+
+.amazonBtn{
+    background-color: rgb(255,216,20);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 40px;
+    font-weight: bold;
+    transition: background-color .5s;
+}
+
+.amazonBtn:hover{
+    background-color: rgb(212, 174, 4);
+}
+.gitBtn{
+    background-color: rgb(46,164,79);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 9px 18px;
+    font-weight: bold;
+    font-size: 13px;
+    transition: box-shadow .5s;
+}
+
+.gitBtn:hover{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.linkedInBtn{
+    background-color: rgb(10,102,194);
+    color: white;
+    font-weight: bold;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 20px;
+    transition: background-color .5s;
+}
+
+.linkedInBtn:hover{
+    background-color: rgb(15, 68, 167);
+}

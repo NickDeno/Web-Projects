@@ -1,0 +1,44 @@
+.clothing-container{
+    border: solid;
+    border-color: grey;
+    position: relative;
+    display: inline-block;
+}
+
+.clothing{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.clothing-sale{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    background-color: black;
+    color: white;
+    font-family: Arial;
+    padding: 5px 10px;
+}
+
+.bottom-overlay{
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-button{
+    border: solid;
+    border-width: 1px;
+    padding: 5px 10px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}

@@ -1,0 +1,67 @@
+body{
+    height: 3000px;
+}
+
+div{
+    font-family: Arial;
+}
+
+.friends-sidebar{
+    background-color: rgb(33, 33, 33);
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.friend-picture{
+    width: 50px;
+    border-radius: 25px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.channel-sidebar{
+    background-color: rgb(55, 55, 55);
+    min-width: 110px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding: 10px 15px;
+    top: 0;
+    bottom: 0;
+    left: 80px;
+}
+
+.channel-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.channel-name{
+    color: white;
+    font-size: 12px;
+}
+
+.new-channel{
+    color: gray;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.channel{
+    color: grey;
+    cursor: pointer;
+    font-size: 10px;
+    margin-bottom: 10px;
+    transition: background-color .5s;
+}
+
+.channel:hover{
+    background-color: white;
+}

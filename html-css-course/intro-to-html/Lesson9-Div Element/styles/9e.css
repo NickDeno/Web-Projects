@@ -1,0 +1,34 @@
+.tweetbox{
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 12px;
+    width: 450px;
+    box-shadow: 0px 0px 4px rgb(0,0,0,.5);
+}
+
+.profilePic{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 25px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.textbox{
+    border: none;
+    width: 300px;
+    font-size: 18px;
+}
+
+.tweetBtn{
+    background-color: rgb(45, 122, 223);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-family: Arial;
+    font-weight: bold;
+    cursor: pointer;
+}

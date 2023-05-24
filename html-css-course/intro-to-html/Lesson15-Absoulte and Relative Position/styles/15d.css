@@ -1,0 +1,32 @@
+body{
+    height: 3000px;
+}
+
+.video-box{
+    background-color: grey;
+    width: 320px;
+    height: 180px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+
+.close-button{
+    font-family: Arial;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: black;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 20px;
+}
+
+.timestamp{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: black;
+    color: white;
+    padding: 2px 5px;
+}

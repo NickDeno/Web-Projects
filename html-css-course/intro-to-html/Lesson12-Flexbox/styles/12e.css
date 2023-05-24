@@ -1,0 +1,33 @@
+div{
+    font-family: Arial;
+}
+
+.container{
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(200, 200, 200);
+    border-radius: 6px;   
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.flexbox{
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.category{
+    flex: 1;
+}
+
+.notis{
+    background-color: rgb(49, 109, 245);
+    padding: 3px 7px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}

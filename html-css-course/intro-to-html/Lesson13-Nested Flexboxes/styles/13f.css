@@ -1,0 +1,90 @@
+div{
+    font-family: Arial;
+}
+
+.container{
+    display: flex;
+    border-width: 1px;
+    border-radius: 3px;
+    border-style: none;
+    border-color: rgb(200, 200, 200);
+    box-shadow: 0px 0px 4px rgba(0,0,0,.5);
+    padding: 10px 15px;
+    
+}
+
+.tweet{
+    display: flex;
+    flex-direction: row;
+    width: 420px;
+}
+
+.profile-pic-container{
+    margin-right: 10px;
+}
+
+.profile-pic{
+    width: 60px;
+    border-radius: 30px;
+}
+
+.tweet-container{
+    flex: 1;
+    margin-bottom: 15px;
+}
+
+.tweet-header{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+.profile-name{
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.username{
+    color: grey;
+}
+
+.tweet-description{
+    margin-bottom: 15px;
+}
+
+.video-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(200, 200, 200);
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow .75s;
+}
+
+.video-container:hover{
+    box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+}
+
+.left-section{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    background-color: rgb(200,200,200)
+}
+
+.right-section{
+    flex: 1;
+}
+
+.video-link{
+    color: rgb(111, 111, 111);
+    margin-bottom: 3px;
+}
+
+.video-description{
+    line-height: 22px;
+}

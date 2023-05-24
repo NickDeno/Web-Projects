@@ -1,0 +1,10 @@
+.test-grid{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 10px;
+}
+
+p{
+    background-color: lightpink;
+}
