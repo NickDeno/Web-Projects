@@ -23,7 +23,6 @@ section{
     width: 100%;
 }
 
-
 /*--------Header-----*/
 header {
     position: relative;
@@ -215,16 +214,16 @@ header::before{
     line-height: 25px;
 }
 
-/*-------Try-Now---------*/
-.try-now-container{
+/*-------Chose-Role--------*/
+.role-container{
     
 }
 
-.try-now-container h1, .try-now-container h2{
+.role-container h1, .role-container h2{
     text-align: center;
 }
 
-.try-now-container h2{
+.role-container h2{
     color: grey;
     font-size: 25px;
     margin-bottom: 35px;
@@ -241,7 +240,7 @@ header::before{
     position: relative;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.7s;
+    transition: transform 0.6s;
 }
 
 .role img{
@@ -272,7 +271,7 @@ header::before{
     align-items: center;
     justify-content: end;
     padding-bottom: 20px;
-    transition: transform 0.7s
+    transition: transform 0.4s
 }
 
 .role:hover .layer{
@@ -288,6 +287,47 @@ header::before{
     font-size: 20px;
     color: rgb(255, 255, 255);
     width: 80%;
+}
+
+/*-------Tipout-----*/
+#bartender-tipout{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#bartender-tipout form div{
+    margin-top: 25px;
+    display: flex;
+}
+
+#bartender-tipout form div label{
+    font-size: 30px;
+}
+
+#bartender-tipout form div input, #bartender-tipout form div select {
+    margin-left: 15px;
+    padding: 0 5px;
+    font-size: 20px;
+}
+
+#bartender-tipout form button{
+    margin-top: 30px;
+    font-size: 30px;
+    padding: 15px 40px;
+    border-style: solid;
+    border-color: rgb(39, 108, 211);
+    background: none;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#bartender-tipout form button:hover{
+    background-color: rgb(39, 108, 211);
 }
 
 

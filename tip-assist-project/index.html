@@ -62,8 +62,8 @@
       </div>
     </div>
   </section>
-  <section id="try-now">
-    <div class="try-now-container">
+  <section id="role">
+    <div class="role-container">
       <h1 class="title">Try Now!</h1>
       <h2 class="subtitle">Chose Your Role</h2>
       <div class="role-row">
@@ -82,6 +82,54 @@
           </div>
         </div>
       </div>
+    </div>
+    <div id="bartender-tipout">
+      <form>
+        <h1>Bartender:</h1>
+        <div class="total-sales">
+          <label>Total Sales: <span style="color: rgb(39, 108, 211);">*</span></label>
+          <input type="number" placeholder="Enter Total Sales" required>
+        </div>
+        <div class="total-foodsales">
+          <label>Total Food Sales: <span style="color: rgb(39, 108, 211);">*</span></label>
+          <input type="number" placeholder="Enter Total Food Sales" required>
+        </div>
+        <div class="how-barback-tipout">
+          <label>How is Barback Tipped Out? <span style="color: rgb(39, 108, 211);">*</span></label>  
+          <select> 
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value="total">By Total Sales</option> 
+            <option value="food">By Food Sales</option> 
+          </select>
+        </div>
+        <div class="barback-tipout-percentage">
+          <label>Barback Tipout Percentage? <span style="color: rgb(39, 108, 211);">*</span></label>  
+          <select> 
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value=".15">15%</option> 
+            <option value=".17">17%</option> 
+            <option value=".20">20%</option> 
+          </select>
+        </div>
+        <div class="how-foodrunner-tipout">
+          <label>How is Foodrunner Tipped Out? <span style="color: rgb(39, 108, 211);">*</span></label>  
+          <select> 
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value="food">By Food Sales</option> 
+            <option value="total">By Total Sales</option> 
+          </select>
+        </div>
+        <div class="foodrunner-tipout-percentage">
+          <label>Foodrunner Tipout Percentage? <span style="color: rgb(39, 108, 211);">*</span></label>  
+          <select> 
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value=".15">15%</option> 
+            <option value=".17">17%</option> 
+            <option value=".20">20%</option> 
+          </select>
+        </div>
+        <button>Calculate</button>
+      </form>
     </div>
   </section>
   <section id="creator" class="">
