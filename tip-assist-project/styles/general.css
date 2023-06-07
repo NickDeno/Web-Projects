@@ -249,8 +249,12 @@ header::before{
     object-fit: cover;
 }
 
-.role:active{
-
+.role i{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 50px;
+    opacity: 0;
 }
 
 .role:hover{
@@ -271,7 +275,7 @@ header::before{
     align-items: center;
     justify-content: end;
     padding-bottom: 20px;
-    transition: transform 0.4s
+    transition: transform 0.4s;
 }
 
 .role:hover .layer{
@@ -290,30 +294,61 @@ header::before{
 }
 
 /*-------Tipout-----*/
-#bartender-tipout{
-    margin-top: 30px;
-    display: flex;
+.tipout-container{
+
+}
+
+.tipout-format{
+    margin-top: 50px;
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tipout-format h1{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.tipout-format div label{
+    font-size: 25px;
+}
+
+.tipout-format div select{
+    font-size: 20px;
+    padding: 0 5px;
+    font-size: 20px;
+}
+.tipout-menu{
+    margin-top: 50px;
+    display: none;
+    opacity: 0;
     flex-direction: column;
     align-items: center;
 
 }
 
-#bartender-tipout form div{
+.tipout-menu form h1{
+    font-size: 50px;
+}
+
+.tipout-menu form div{
     margin-top: 25px;
     display: flex;
 }
 
-#bartender-tipout form div label{
+.tipout-menu form div label{
     font-size: 30px;
 }
 
-#bartender-tipout form div input, #bartender-tipout form div select {
+.tipout-menu form div input, .tipout-menu form div select {
     margin-left: 15px;
     padding: 0 5px;
     font-size: 20px;
 }
 
-#bartender-tipout form button{
+.tipout-menu form button{
     margin-top: 30px;
     font-size: 30px;
     padding: 15px 40px;
@@ -326,7 +361,7 @@ header::before{
     transition: 0.5s;
 }
 
-#bartender-tipout form button:hover{
+.tipout-menu form button:hover{
     background-color: rgb(39, 108, 211);
 }
 
