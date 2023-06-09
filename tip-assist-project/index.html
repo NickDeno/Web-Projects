@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/d27b7bf830.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/features.css">
+  <link rel="stylesheet" href="styles/role.css">
+  <link rel="stylesheet" href="styles/tipout.css">
+  <link rel="stylesheet" href="styles/creator.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Rammetto+One" />
   <title>Document</title>
 </head>
+
 <body>
   <header>
     <div class="container">
@@ -20,18 +27,21 @@
         </div>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Creator</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Try Now</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#role">Try Now</a></li>
+          <li><a href="#creator">Creator</a></li>
         </ul>
       </div>
       <div class="about">
         <h1>Simplifying Tipout</h1>
-        <h2>Our goal is to streamline tip distribution by providing servers and bartenders with a user-friendly platform that simplifies the process of tipping out restaurant staff.</h2>
-        <button>
-          <i class="fa-solid fa-share-from-square"></i> 
-          <div>Try Now!</div>
-        </button>
+        <h2>Our goal is to streamline tip distribution by providing servers and bartenders with a user-friendly platform
+          that simplifies the process of tipping out restaurant staff.</h2>
+        <a href="#role">
+          <button>
+            <i class="fa-solid fa-share-from-square"></i>
+            <div>Try Now!</div>
+          </button>
+        </a>
       </div>
     </div>
   </header>
@@ -43,31 +53,34 @@
           <i class="fa-solid fa-chart-line"></i>
           <div class="feature-info">
             <h2>Speed</h2>
-            <p>TipAssist  enables servers and bartenders to effortlessly calculate tipout to restaurant staff, accelerating the tip-out process with just a few clicks.</p>
+            <p>TipAssist enables servers and bartenders to effortlessly calculate tipout to restaurant staff,
+              accelerating the tip-out process with just a few clicks.</p>
           </div>
         </div>
         <div class="feature-item">
           <i class="fa-solid fa-gear"></i>
           <div class="feature-info">
             <h2>Customizable</h2>
-            <p>Allows for easy and flexible adjustment of varying tipout percentages to meet the specific needs of your restaurant tipout process.</p>
+            <p>Allows for easy and flexible adjustment of varying tipout percentages to meet the specific needs of your
+              restaurant tipout process.</p>
           </div>
         </div>
         <div class="feature-item">
           <i class="fa-solid fa-handshake"></i>
           <div class="feature-info">
             <h2>Consistent</h2>
-            <p>Ensures accurate and consistent tipout calculations by providing a reliable platform that eliminates errors and ensures precise distribution of tips</p>
+            <p>Ensures accurate and consistent tipout calculations by providing a reliable platform that eliminates
+              errors and ensures precise distribution of tips</p>
+          </div>
         </div>
       </div>
-    </div>
   </section>
   <section id="role">
     <div class="role-container">
       <h1 class="title">Try Now!</h1>
       <h2 class="subtitle">Chose Your Role</h2>
       <div class="role-row">
-        <div class="role" id="server-role">
+        <div class="role" id="server-role" onclick="openServerTipoutFormat()">
           <img src="imgs/replicate-prediction-7ez5gwandvaotorikvfauklque.png" alt="">
           <div class="layer" id="server-role-layer">
             <h3>Server</h3>
@@ -75,7 +88,7 @@
           </div>
           <i class="fa-regular fa-square-check" id="server-role-selected"></i>
         </div>
-        <div class="role" id="bartender-role">
+        <div class="role" id="bartender-role" onclick="openBartenderTipoutFormat()">
           <img src="imgs/replicate-prediction-selttx7qa5esvarixww3tj22pu.png" alt="">
           <div class="layer" id="bartender-role-layer">
             <h3>Bartender</h3>
@@ -85,195 +98,394 @@
         </div>
       </div>
     </div>
-    <div class="tipout-container">
-      <div class="tipout-format" id="bartender-tipout-format">
-        <h1>Bartender:</h1>
-        <div>
-          <label>Tip Format: <span style="color: rgb(39, 108, 211);">*</span></label> 
-          <select id="bartender-tipout-format-selector" onchange="openMenu()"> 
+  </section>
+  <section class="tipout" id="bartender-tipout">
+    <div class="tipout-format" id="bartender-tipout-format">
+      <h1>Bartender:</h1>
+      <div>
+        <label>Tipout Format: <span style="color: rgb(39, 108, 211);">*</span></label>
+        <select id="bartender-tipout-format-selector" onchange="openBartenderTipoutMenu()">
+          <option value="" disabled="disabled" selected="selected"></option>
+          <option value="fids">Fids</option>
+          <option value="custom">Custom</option>
+        </select>
+      </div>
+    </div>
+    <div class="tipout-menu" id="bartender-tipout-menu">
+      <form name="bartender-tipout-menu-form">
+        <div class="total-sales">
+          <label>Total Sales: <span style="color: rgb(39, 108, 211);">*</span></label>
+          <input type="number" placeholder="Enter Total Sales" required>
+        </div>
+        <div class="total-foodsales">
+          <label>Total Food Sales: <span style="color: rgb(39, 108, 211);">*</span></label>
+          <input type="number" placeholder="Enter Total Food Sales" required>
+        </div>
+        <div class="how-barback-tipout" id="bartender-how-barback-tipout">
+          <label>How is Barback Tipped Out? <span style="color: rgb(39, 108, 211);">*</span></label>
+          <select required>
             <option value="" disabled="disabled" selected="selected"></option>
-            <option value="fids">Fids</option> 
-            <option value="custom">Custom</option> 
+            <option value="total">By Total Sales</option>
+            <option value="food">By Food Sales</option>
           </select>
         </div>
-      </div>
-      <div class="tipout-menu" id="bartender-tipout-menu">
-        <form name="bartender-tipout-menu-form">
-          <div class="total-sales">
-            <label>Total Sales: <span style="color: rgb(39, 108, 211);">*</span></label>
-            <input type="number" placeholder="Enter Total Sales" required>
+        <div class="barback-tipout-percentage" id="bartender-barback-tipout-percentage">
+          <label>Barback Tipout Percentage? <span style="color: rgb(39, 108, 211);">*</span></label>
+          <select required>
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value=".15">15%</option>
+            <option value=".17">17%</option>
+            <option value=".20">20%</option>
+          </select>
+        </div>
+        <div class="how-foodrunner-tipout" id="bartender-how-foodrunner-tipout">
+          <label>How is Foodrunner Tipped Out? <span style="color: rgb(39, 108, 211);">*</span></label>
+          <select required>
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value="food">By Food Sales</option>
+            <option value="total">By Total Sales</option>
+          </select>
+        </div>
+        <div class="foodrunner-tipout-percentage" id="bartender-foodrunner-tipout-percentage">
+          <label>Foodrunner Tipout Percentage? <span style="color: rgb(39, 108, 211);">*</span></label>
+          <select required>
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value=".15">15%</option>
+            <option value=".17">17%</option>
+            <option value=".20">20%</option>
+          </select>
+        </div>
+        <button onclick="calcBartenderTipout()">Calculate</button>
+      </form>
+      <div class="tipout-menu-calculated" id="bartender-tipout-menu-calculated">
+        <form name="bartender-tipout-menu-form-calculated">
+          <div class="tipout-calculated" id="bartender-barback-tipout-calculated">
+            <p>Barback:</p> 
+            <div>
+              <label>x .15</label>
+              <input type="number"> 
+            </div>
+            <div>
+              <label>x .15</label>
+              <input type="number"> 
+            </div>
+            <div>
+              <label>Tipout: </label>
+              <input type="number"> 
+            </div>
           </div>
-          <div class="total-foodsales">
-            <label>Total Food Sales: <span style="color: rgb(39, 108, 211);">*</span></label>
-            <input type="number" placeholder="Enter Total Food Sales" required>
+          <div class="tipout-calculated" id="bartender-foodrunner-tipout-calculated">
+            <p>Foodrunner:</p> 
+            <div>
+              <label>x .15</label>
+              <input type="number"> 
+            </div>
+            <div>
+              <label>x .15</label>
+              <input type="number"> 
+            </div>
+            <div>
+              <label>Tipout: </label>
+              <input type="number"> 
+            </div>
           </div>
-          <div class="how-barback-tipout">
-            <label>How is Barback Tipped Out? <span style="color: rgb(39, 108, 211);">*</span></label>  
-            <select> 
-              <option value="" disabled="disabled" selected="selected"></option>
-              <option value="total">By Total Sales</option> 
-              <option value="food">By Food Sales</option> 
-            </select>
-          </div>
-          <div class="barback-tipout-percentage">
-            <label>Barback Tipout Percentage? <span style="color: rgb(39, 108, 211);">*</span></label>  
-            <select> 
-              <option value="" disabled="disabled" selected="selected"></option>
-              <option value=".15">15%</option> 
-              <option value=".17">17%</option> 
-              <option value=".20">20%</option> 
-            </select>
-          </div>
-          <div class="how-foodrunner-tipout">
-            <label>How is Foodrunner Tipped Out? <span style="color: rgb(39, 108, 211);">*</span></label>  
-            <select> 
-              <option value="" disabled="disabled" selected="selected"></option>
-              <option value="food">By Food Sales</option> 
-              <option value="total">By Total Sales</option> 
-            </select>
-          </div>
-          <div class="foodrunner-tipout-percentage">
-            <label>Foodrunner Tipout Percentage? <span style="color: rgb(39, 108, 211);">*</span></label>  
-            <select> 
-              <option value="" disabled="disabled" selected="selected"></option>
-              <option value=".15">15%</option> 
-              <option value=".17">17%</option> 
-              <option value=".20">20%</option> 
-            </select>
-          </div>
-          <button>Calculate</button>
         </form>
       </div>
     </div>
-    <div class="tipout-menu-container">
-      <div class="tipout-format" id="server-tipout-format">
-        <h1>Server:</h1>
-        <div>
-          <label>Tip Format: <span style="color: rgb(39, 108, 211);">*</span></label> 
-          <select> 
+  </section>
+
+  <section class="tipout" id="server-tipout">
+    <div class="tipout-format" id="server-tipout-format">
+      <h1>Server:</h1>
+      <div>
+        <label>Tipout Format: <span style="color: rgb(39, 108, 211);">*</span></label>
+        <select id="server-tipout-format-selector" onchange="openServerTipoutMenu()">
+          <option value="" disabled="disabled" selected="selected"></option>
+          <option value="fids">Fids</option>
+          <option value="custom">Custom</option>
+        </select>
+      </div>
+    </div>
+    <div class="tipout-menu" id="server-tipout-menu">
+      <form name="server-tipout-menu-form">
+        <div class="total-sales">
+          <label>Total Sales: <span style="color: rgb(39, 108, 211);">*</span></label>
+          <input type="number" placeholder="Enter Total Sales" required>
+        </div>
+        <div class="total-foodsales">
+          <label>Total Food Sales: <span style="color: rgb(39, 108, 211);">*</span></label>
+          <input type="number" placeholder="Enter Total Food Sales" required>
+        </div>
+        <div class="total-drinksales">
+          <label>Total Drink Sales: <span style="color: rgb(39, 108, 211);">*</span></label>
+          <input type="number" placeholder="Enter Total Drink Sales" required>
+        </div>
+        <div class="how-busser-tipout" id="server-how-busser-tipout">
+          <label>How is Busser Tipped Out? <span style="color: rgb(39, 108, 211);">*</span></label>
+          <select required>
             <option value="" disabled="disabled" selected="selected"></option>
-            <option value="fids">Fids</option> 
-            <option value="custom" onclick="openMenu()">Custom</option> 
+            <option value="total">By Total Sales</option>
+            <option value="food">By Food Sales</option>
           </select>
         </div>
-      <div class="tipout-menu" id="server-tipout-menu"></div>
+        <div class="busser-tipout-percentage" id="server-busser-tipout-percentage">
+          <label>Busser Tipout Percentage? <span style="color: rgb(39, 108, 211);">*</span></label>
+          <select required>
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value=".15">15%</option>
+            <option value=".17">17%</option>
+            <option value=".20">20%</option>
+          </select>
+        </div>
+        <div class="how-foodrunner-tipout" id="server-how-foodrunner-tipout">
+          <label>How is Foodrunner Tipped Out? <span style="color: rgb(39, 108, 211);">*</span></label>
+          <select required>
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value="food">By Food Sales</option>
+            <option value="total">By Total Sales</option>
+          </select>
+        </div>
+        <div class="foodrunner-tipout-percentage" id="server-foodrunner-tipout-percentage">
+          <label>Foodrunner Tipout Percentage? <span style="color: rgb(39, 108, 211);">*</span></label>
+          <select required>
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value=".15">15%</option>
+            <option value=".17">17%</option>
+            <option value=".20">20%</option>
+          </select>
+        </div>
+        <div class="how-bartender-tipout" id="server-how-bartender-tipout">
+          <label>How is Bartender Tipped Out? <span style="color: rgb(39, 108, 211);">*</span></label>
+          <select required>
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value="drink">By Drink Sales</option>
+            <option value="total">By Total Sales</option>
+          </select>
+        </div>
+        <div class="bartender-tipout-percentage" id="server-bartender-tipout-percentage">
+          <label>Bartender Tipout Percentage? <span style="color: rgb(39, 108, 211);">*</span></label>
+          <select required>
+            <option value="" disabled="disabled" selected="selected"></option>
+            <option value=".15">15%</option>
+            <option value=".17">17%</option>
+            <option value=".20">20%</option>
+          </select>
+        </div>
+        <button onclick="calcServerTipout()">Calculate</button>
+      </form>
+      <div class="tipout-menu-calculated" id="server-tipout-menu-calculated">
+        <form name="server-tipout-menu-form-calculated">
+          <div class="tipout-calculated" id="server-barback-tipout-calculated">
+            <p>Busser:</p> 
+            <div>
+              <label>x .15</label>
+              <input type="number"> 
+            </div>
+            <div>
+              <label>x .15</label>
+              <input type="number"> 
+            </div>
+            <div>
+              <label>Tipout: </label>
+              <input type="number"> 
+            </div>
+          </div>
+          <div class="tipout-calculated" id="server-foodrunner-tipout-calculated">
+            <p>Foodrunner:</p> 
+            <div>
+              <label>x .15</label>
+              <input type="number"> 
+            </div>
+            <div>
+              <label>x .15</label>
+              <input type="number"> 
+            </div>
+            <div>
+              <label>Tipout: </label>
+              <input type="number"> 
+            </div>
+          </div>
+          <div class="tipout-calculated" id="server-bartender-tipout-calculated">
+            <p>Bartender:</p> 
+            <div>
+              <label>x .15</label>
+              <input type="number"> 
+            </div>
+            <div>
+              <label>x .15</label>
+              <input type="number"> 
+            </div>
+            <div>
+              <label>Tipout: </label>
+              <input type="number"> 
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
   <section id="creator" class="">
     <div class="container">
       <div class="creator-row">
         <div class="creator-col1">
-            <img src="imgs/IMG_0564.JPG" alt="">
-            <p>Nicholas DeNobrega</p>
-            <div>
-              <i class="fa-brands fa-instagram"></i>
-              <i class="fa-brands fa-github"></i>
-              <i class="fa-brands fa-facebook"></i>
-            </div>
+          <img src="imgs/IMG_0564.JPG" alt="">
+          <p>Nicholas DeNobrega</p>
+          <div>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-facebook"></i>
+          </div>
         </div>
         <div class="creator-col2">
           <h1 class="title">Creator</h1>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque nulla commodi iste, eos recusandae itaque? Cupiditate, ullam! Soluta, fuga reiciendis. Voluptatibus totam placeat, atque eos exercitationem voluptas! Labore dolorum deleniti eius doloremque! Non cupiditate doloremque exercitationem sint repellat vel nobis nesciunt optio iure, voluptatibus facere harum neque labore perferendis facilis.</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque nulla commodi iste, eos recusandae
+            itaque? Cupiditate, ullam! Soluta, fuga reiciendis. Voluptatibus totam placeat, atque eos exercitationem
+            voluptas! Labore dolorum deleniti eius doloremque! Non cupiditate doloremque exercitationem sint repellat
+            vel nobis nesciunt optio iure, voluptatibus facere harum neque labore perferendis facilis.</p>
         </div>
       </div>
     </div>
   </section>
 
- 
-<script>
-  const bartenderRole = document.getElementById('bartender-role');
-  const bartenderRoleSelected = document.getElementById('bartender-role-selected');
-  const bartenderRoleLayer = document.getElementById('bartender-role-layer');
-  const bartenderTipoutFormat = document.getElementById('bartender-tipout-format');
-  const bartenderTipoutFormatSelector = document.getElementById('bartender-tipout-format-selector');
-  const bartenderForm = document.forms['bartender-tipout-menu-form']
-  const bartenderTipoutMenu = document.getElementById('bartender-tipout-menu');
-  
-  const serverRole = document.getElementById('server-role');  
-  const serverRoleSelected = document.getElementById('server-role-selected');
-  const serverRoleLayer = document.getElementById('server-role-layer');
-  const serverTipoutFormat = document.getElementById('server-tipout-format');
-  const serverTipoutMenu = document.getElementById('server-tipout-menu');
 
-  function openMenu(){
-    if(bartenderTipoutFormat.style.display === 'flex'){
-      const selectedItem = bartenderTipoutFormatSelector.value;
-      if(selectedItem == 'custom'){
-        openBartenderMenu();
+    <script>
+      //Dont even question why theres so many consts i couldnt tell u
+      //Probs a better way to do this but irdc i just want shit to work
+      const bartenderRole = document.getElementById('bartender-role');
+      const bartenderRoleSelected = document.getElementById('bartender-role-selected');
+      const bartenderRoleLayer = document.getElementById('bartender-role-layer');
+      const bartenderTipoutFormat = document.getElementById('bartender-tipout-format');
+      const bartenderTipoutFormatSelector = document.getElementById('bartender-tipout-format-selector');
+      const bartenderTipoutMenu = document.getElementById('bartender-tipout-menu');
+      const bartenderCalcuatedTipoutMenu = document.getElementById('bartender-tipout-menu-calculated');
+      const bartenderTipoutForm = document.forms['bartender-tipout-menu-form'];
+      const bartenderCalculatedTipoutForm = document.forms['bartender-tipout-menu-form-calculated'];
+      const serverRole = document.getElementById('server-role');
+      const serverRoleSelected = document.getElementById('server-role-selected');
+      const serverRoleLayer = document.getElementById('server-role-layer');
+      const serverTipoutFormat = document.getElementById('server-tipout-format');
+      const serverTipoutFormatSelector = document.getElementById('server-tipout-format-selector');
+      const serverTipoutMenu = document.getElementById('server-tipout-menu');
+      const serverCalcuatedTipoutMenu = document.getElementById('server-tipout-menu-calculated');
+      const serverTipoutForm = document.forms['server-tipout-menu-form'];
+      const serverCalculatedTipoutForm = document.forms['server-tipout-menu-form-calculated'];
+
+      function openBartenderTipoutFormat () {
+        bartenderRoleLayer.style.transform = 'translateY(-100%)';
+        bartenderTipoutFormat.style.display = 'flex';
+        setTimeout(function () {
+          bartenderRoleSelected.style.opacity = '1';
+          bartenderRoleSelected.style.transition = 'opacity 1s';
+          bartenderTipoutFormat.style.opacity = '1';
+          bartenderTipoutFormat.style.transition = 'opacity 1s';
+        }, 100);
+        serverTipoutForm.reset();
+        serverCalculatedTipoutForm.reset();
+        serverTipoutFormatSelector.selectedIndex = 0;
+        serverRoleLayer.style.transform = 'translateY(100%)';
+        serverTipoutFormat.style.opacity = '0';
+        serverTipoutMenu.style.opacity = '0';
+        serverRoleSelected.style.opacity = '0';
+        setTimeout(function () {
+          serverTipoutFormat.style.display = 'none';
+          serverTipoutMenu.style.display = 'none';
+          serverCalcuatedTipoutMenu.style.display = 'none';
+          document.getElementById('bartender-tipout').scrollIntoView();
+        }, 500);
       }
-    } else if(serverTipoutFormat.style.display === 'flex'){
-      openServerMenu();
-    }
-  }
 
-  function openBartenderMenu(){
-    bartenderTipoutMenu.style.display = 'flex';
-    setTimeout(function() {
-      bartenderTipoutMenu.style.opacity = '1';
-      bartenderTipoutMenu.style.transition = 'opacity 1s';
-    }, 100);
+      function openServerTipoutFormat() {
+        serverRoleLayer.style.transform = 'translateY(-100%)';
+        serverTipoutFormat.style.display = 'flex';
+        setTimeout(function () {
+          serverRoleSelected.style.opacity = '1';
+          serverRoleSelected.style.transition = 'opacity 1s';
+          serverTipoutFormat.style.opacity = '1';
+          serverTipoutFormat.style.transition = 'opacity 1s';
+        }, 100);
+        bartenderTipoutForm.reset();
+        bartenderCalculatedTipoutForm.reset();
+        bartenderTipoutFormatSelector.selectedIndex = 0;
+        bartenderRoleLayer.style.transform = 'translateY(100%)';
+        bartenderTipoutFormat.style.opacity = '0';
+        bartenderTipoutMenu.style.opacity = '0';
+        bartenderRoleSelected.style.opacity = '0';
+        setTimeout(function () {
+          bartenderTipoutFormat.style.display = 'none';
+          bartenderTipoutMenu.style.display = 'none';
+          bartenderCalcuatedTipoutMenu.style.display = 'none';
+          document.getElementById('server-tipout').scrollIntoView();
+        }, 500);
+      }
 
-    serverTipoutMenu.style.opacity = '0';
-    setTimeout(function() {
-      serverTipoutMenu.style.display = 'none';
-    }, 500); 
-  }
+      function openBartenderTipoutMenu() {
+        bartenderTipoutForm.reset();
+        bartenderCalculatedTipoutForm.reset();
+        const selectedItem = bartenderTipoutFormatSelector.value;
+        if(selectedItem == 'fids'){
+          document.getElementById('bartender-how-barback-tipout').querySelector('select').selectedIndex = 1;
+          document.getElementById('bartender-barback-tipout-percentage').querySelector('select').selectedIndex = 2;
+          document.getElementById('bartender-how-foodrunner-tipout').querySelector('select').selectedIndex = 1;
+          document.getElementById('bartender-foodrunner-tipout-percentage').querySelector('select').selectedIndex = 1;
+        }
+        bartenderTipoutMenu.style.display = 'flex';
+        setTimeout(function () {
+          bartenderTipoutMenu.style.opacity = '1';
+          bartenderTipoutMenu.style.transition = 'opacity 1s';
+        }, 100);
+        serverTipoutMenu.style.opacity = '0';
+        bartenderCalcuatedTipoutMenu.style.opacity = '0';
+        setTimeout(function () {
+          serverTipoutMenu.style.display = 'none';
+          bartenderCalcuatedTipoutMenu.style.display = 'none';
+          document.getElementById('bartender-tipout-menu').scrollIntoView();
+        }, 500);
+      }
 
-  function openServerMenu(){
-    serverTipoutMenu.style.display = 'flex';
-    setTimeout(function() {
-      serverTipoutMenu.style.opacity = '1';
-      serverTipoutMenu.style.transition = 'opacity 1s';
-    }, 100);
+      function openServerTipoutMenu() {
+        serverTipoutForm.reset();
+        serverCalculatedTipoutForm.reset();
+        const selectedItem = serverTipoutFormatSelector.value;
+        if(selectedItem == 'fids'){
+          document.getElementById('server-how-busser-tipout').querySelector('select').selectedIndex = 1;
+          document.getElementById('server-busser-tipout-percentage').querySelector('select').selectedIndex = 1;
+          document.getElementById('server-how-foodrunner-tipout').querySelector('select').selectedIndex = 1;
+          document.getElementById('server-foodrunner-tipout-percentage').querySelector('select').selectedIndex = 1;
+          document.getElementById('server-how-bartender-tipout').querySelector('select').selectedIndex = 1;
+          document.getElementById('server-bartender-tipout-percentage').querySelector('select').selectedIndex = 1;
+        }
+        serverTipoutMenu.style.display = 'flex';
+        setTimeout(function () {
+          serverTipoutMenu.style.opacity = '1';
+          serverTipoutMenu.style.transition = 'opacity 1s';
+        }, 100);
+        bartenderTipoutMenu.style.opacity = '0';
+        serverCalcuatedTipoutMenu.style.opacity = '0';
+        setTimeout(function () {
+          bartenderTipoutMenu.style.display = 'none';
+          serverCalcuatedTipoutMenu.style.display = 'none';
+          document.getElementById('server-tipout-menu').scrollIntoView();
+        }, 500);
+      }
 
-    bartenderTipoutMenu.style.opacity = '0';
-    setTimeout(function() {
-      bartenderTipoutMenu.style.display = 'none';
-    }, 500);  
-  }
+      function calcBartenderTipout(){
+        bartenderCalcuatedTipoutMenu.style.display = 'flex';  
+        setTimeout(function () {
+          bartenderCalcuatedTipoutMenu.style.opacity = '1';
+          bartenderCalcuatedTipoutMenu.style.transition = 'opacity 1s';  
+          document.getElementById('bartender-tipout-menu-calculated').scrollIntoView();
+        }, 500); 
+      }
 
-  bartenderRole.onclick = function(){
-    bartenderRoleLayer.style.transform = 'translateY(-100%)';
-    bartenderTipoutFormat.style.display = 'flex';
-    setTimeout(function() {
-      bartenderRoleSelected.style.opacity = '1';
-      bartenderRoleSelected.style.transition = 'opacity 1s';
-      bartenderTipoutFormat.style.opacity = '1';
-      bartenderTipoutFormat.style.transition = 'opacity 1s';
-    }, 100);
-
-    serverRoleLayer.style.transform = 'translateY(100%)';
-    serverTipoutFormat.style.opacity = '0';
-    serverTipoutMenu.style.opacity = '0';
-    serverRoleSelected.style.opacity = '0';
-    setTimeout(function() {
-      serverTipoutFormat.style.display = 'none';
-      serverTipoutMenu.style.display = 'none';
-    }, 500);
-  }
-
-  serverRole.onclick=function(){
-    serverRoleLayer.style.transform = 'translateY(-100%)';
-    serverTipoutFormat.style.display = 'flex';
-    setTimeout(function() {
-      serverRoleSelected.style.opacity = '1';
-      serverRoleSelected.style.transition = 'opacity 1s';
-      serverTipoutFormat.style.opacity = '1';
-      serverTipoutFormat.style.transition = 'opacity 1s';
-    }, 100);
-
-    bartenderForm.reset();
-    bartenderRoleLayer.style.transform = 'translateY(100%)';
-    bartenderTipoutFormat.style.opacity = '0';
-    bartenderTipoutMenu.style.opacity = '0';
-    bartenderRoleSelected.style.opacity = '0';
-    setTimeout(function() {
-      bartenderTipoutFormat.style.display = 'none';
-      bartenderTipoutMenu.style.display = 'none';
-    }, 500);
-  }
-</script>
-
-
+      function calcServerTipout(){
+        serverCalcuatedTipoutMenu.style.display = 'flex';  
+        setTimeout(function () {
+          serverCalcuatedTipoutMenu.style.opacity = '1';
+          serverCalcuatedTipoutMenu.style.transition = 'opacity 1s';  
+          document.getElementById('server-tipout-menu-calculated').scrollIntoView();
+        }, 500); 
+      }
+    </script>
 </body>
+
 </html>
